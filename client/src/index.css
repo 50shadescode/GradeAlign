@@ -1,0 +1,22 @@
+:root {
+  /* GradeAlign Lavender Branding */
+  --primary-color: #967BB6;    /* Deep Lavender */
+  --primary-dark: #6F538E;     /* Royal Purple */
+  --secondary-color: #E6E6FA;  /* Light Lavender background */
+  --accent-color: #B29DD9;     /* Soft Purple for highlights */
+  
+  --text-dark: #1F2937;
+  --text-light: #6B7280;
+  --bg-light: #FBFBFF;
+  --bg-white: #FFFFFF;
+  
+  --border-radius: 0.75rem;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  margin: 0;
+}
