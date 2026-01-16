@@ -63,7 +63,7 @@ const AboutMe = () => {
             <p style={{ marginBottom: '1.5rem' }}>
               I specialize in providing <strong>reliable, student-focused academic support for nursing and army students</strong>, 
               while also supporting learners pursuing other college and university disciplines. My services include 
-              personalized tutoring, structured assignments guidance, study support, and assistance with finding 
+              personalized tutoring, structured assignments' help, study support, and assistance with finding 
               qualified preceptors for required clinical or Practicum experiences.
             </p>
             

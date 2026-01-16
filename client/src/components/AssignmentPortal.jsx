@@ -7,7 +7,7 @@ const AssignmentPortal = () => {
   // Exact rates based on academic level
   const rates = [
     { level: "High School", price: "15", desc: "Foundational alignment for general tasks." },
-    { level: "Undergraduate", price: "25", desc: "Degree-level research & assignment support." },
+    { level: "Undergraduate", price: "23", desc: "Degree-level research & assignment support." },
     { level: "Master's", price: "28", desc: "Advanced analysis for graduate-level papers." },
     { level: "Doctorate", price: "35", desc: "Specialized DNP & PhD project alignment." }
   ];
