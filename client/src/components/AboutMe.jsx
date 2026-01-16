@@ -52,7 +52,7 @@ const AboutMe = () => {
         {/* Right Side: Professional Story - UPDATED WITH PROVIDED TEXT */}
         <div style={{ flex: '1 1 500px' }}>
           <h4 style={{ color: '#116E6E', fontWeight: '800', letterSpacing: '0.15em', marginBottom: '1rem', textTransform: 'uppercase', fontSize: '0.9rem' }}>
-            Mentorship & Excellence
+            Assignments Help & Guidance
           </h4>
           
           <h2 style={{ fontSize: '2.8rem', color: '#000000', marginBottom: '1.5rem', lineHeight: '1.2', fontWeight: '800' }}>

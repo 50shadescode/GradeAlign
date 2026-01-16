@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Menu, X, GraduationCap, ShieldCheck, MessageCircle } from 'lucide-react';
+import { Menu, X, ShieldCheck, MessageCircle } from 'lucide-react';
+// 1. Import your logo from the assets folder
+import logo from '../assets/Gradelogo.jpeg'; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,10 +14,41 @@ const Navbar = () => {
       top: 0,
       zIndex: 1000 
     }}>
-      <div className="header-container">
-        <div className="logo-container">
-          <GraduationCap size={32} color="var(--primary-color)" />
-          <span className="brand-text" style={{ color: 'var(--primary-color)' }}>GradeAlign</span>
+      <div className="header-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem 1rem' }}>
+        
+        {/* 2. Logo Container updated with your Gradelogo.jpeg */}
+        <div className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <img 
+            src={logo} 
+            alt="GradeAlign Logo" 
+            style={{ 
+              height: '45px', // Adjusted height for a professional navbar look
+              width: 'auto',
+              borderRadius: '6px', // Optional: adds a slight smooth corner to the jpeg
+              objectFit: 'contain'
+            }} 
+          />
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span className="brand-text" style={{ 
+              color: 'var(--primary-color)', 
+              fontWeight: '800', 
+              fontSize: '1.4rem',
+              lineHeight: '1'
+            }}>
+              GradeAlign
+            </span>
+            {/* Added Slogan in the clinical green shade */}
+            <span style={{ 
+              fontSize: '0.65rem', 
+              color: 'var(--primary-color)', 
+              fontWeight: '600', 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.05em',
+              marginTop: '2px'
+            }}>
+              Aligning Effort with Excellence
+            </span>
+          </div>
         </div>
 
         {/* Desktop Menu */}
@@ -33,7 +66,6 @@ const Navbar = () => {
             
             <li><a href="#reviews">Reviews</a></li>
 
-            {/* Styled Contact Button for Desktop */}
             <li>
               <a href="#contact" style={{ 
                 backgroundColor: 'var(--primary-color)', 
@@ -68,7 +100,6 @@ const Navbar = () => {
             <li><a href="#preceptors" onClick={() => setIsOpen(false)}>Preceptors</a></li>
             <li><a href="#army-hub" onClick={() => setIsOpen(false)}>Army Hub</a></li>
             <li><a href="#reviews" onClick={() => setIsOpen(false)}>Reviews</a></li>
-            {/* Added Contact to Mobile Menu for Responsiveness */}
             <li>
               <a href="#contact" 
                  onClick={() => setIsOpen(false)} 
