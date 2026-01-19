@@ -1,34 +1,60 @@
 /* 1. Global Typography & Color Pivot */
 :root {
-  /* Transition: Lavender (#967bb6) -> Clinical Green (#116E6E) */
-  --primary-color: #116E6E; 
-  /* Transition: Soft Black (#2d2d3a) -> High-Contrast Black (#000000) */
+  /* Clinical Green theme */
+  --primary-color: #116E6E;
   --primary-dark: #000000;
-  --accent-color: #E5C100; /* Military Gold - Pairs perfectly with Green */
+
+  /* ADD: used by your navbar borders and drawer border */
+  --secondary-color: #D7ECEC;
+
+  --accent-color: #E5C100; /* Military Gold */
   --text-main: #1a1a1a;
   --bg-white: #ffffff;
-  --bg-light: #F0F7F7; /* Soft Mint tint for section breaks */
+  --bg-light: #F0F7F7;
   --transition: all 0.3s ease;
-  
-  /* The "Bigger & Better" Scale */
+
+  /* Scale */
   --font-h1: clamp(2.5rem, 5vw + 1rem, 4rem);
   --font-h2: clamp(2rem, 4vw + 1rem, 3rem);
   --font-body: clamp(1.05rem, 0.5vw + 1rem, 1.25rem);
   --line-height-relaxed: 1.8;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 body {
   font-family: 'Inter', 'Poppins', sans-serif;
-  line-height: var(--line-height-relaxed); /* Improves academic readability */
+  line-height: var(--line-height-relaxed);
   font-size: var(--font-body);
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
+  background: var(--bg-white);
 }
 
-/* 2. Authority Headings (Green & Black Strategy) */
+/* ✅ Fix: prevent purple/underline links (mobile drawer + everywhere) */
+a,
+a:visited {
+  color: var(--primary-dark);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* 2. Authority Headings */
 h1, h2, h3 {
   color: var(--primary-dark);
-  font-weight: 800; /* Maximum authority */
+  font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.5rem;
 }
@@ -39,17 +65,17 @@ h2 { font-size: var(--font-h2); }
 p {
   margin-bottom: 1.5rem;
   opacity: 0.9;
-  max-width: 75ch; /* Optimized line length for reading comfort */
+  max-width: 75ch;
 }
 
-/* 3. Navbar Styling Refresh */
+/* 3. Navbar Styling */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 2rem;
 }
 
 .logo-container {
@@ -66,32 +92,55 @@ p {
   list-style: none;
   gap: 2.5rem;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu a {
-  text-decoration: none;
-  color: var(--primary-dark);
   font-weight: 600;
   font-size: 1rem;
-  transition: var(--transition);
 }
 
-.nav-menu a:hover {
-  color: var(--primary-color); /* Hover state now Clinical Green */
+/* Desktop default */
+.nav-menu {
+  display: block;
+}
+
+/* Hide hamburger on desktop by default */
+.mobile-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-light);
+  border: 1px solid var(--secondary-color);
+  padding: 0.75rem;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--primary-color);
+  line-height: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-menu-toggle:focus {
+  outline: 2px solid rgba(17, 110, 110, 0.35);
+  outline-offset: 3px;
 }
 
 /* 4. Mobile Experience Enhancements */
 @media (max-width: 768px) {
-  .nav-menu { display: none; }
-  
-  .mobile-menu-toggle { 
-    display: block; 
-    background: var(--bg-light); 
-    border: none; 
-    padding: 0.75rem;
-    border-radius: 12px;
-    cursor: pointer; 
-    color: var(--primary-color);
+  /* Reduce header padding for small screens */
+  .header-container {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Hide desktop nav on mobile */
+  .nav-menu {
+    display: none;
+  }
+
+  /* Show hamburger on mobile */
+  .mobile-menu-toggle {
+    display: inline-flex;
   }
 
   /* Swipable Tabs Fix */
@@ -114,7 +163,7 @@ p {
   }
 }
 
-/* 5. Thumb-Friendly Buttons (Mission-Ready Green) */
+/* 5. Buttons */
 .btn-primary {
   background-color: var(--primary-color) !important;
   color: white !important;
@@ -129,7 +178,7 @@ p {
 .btn-primary:hover {
   transform: translateY(-3px);
   filter: brightness(1.1);
-  box-shadow: 0 15px 30px rgba(17, 110, 110, 0.3); /* Green-tinted shadow */
+  box-shadow: 0 15px 30px rgba(17, 110, 110, 0.3);
 }
 
 .btn-secondary {
